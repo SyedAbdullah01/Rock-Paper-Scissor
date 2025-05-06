@@ -19,3 +19,25 @@ function getHumanChoice() {
         return choice;
     }
 }
+
+function playRound() {
+    const humanChoice = getHumanChoice();
+    const computerChoice = getComputerChoice();
+
+
+    if (humanChoice === computerChoice) {
+        console.log("It's a tie!");
+    } else if (
+        (humanChoice === "rock" && computerChoice === "scissors") ||
+        (humanChoice === "scissors" && computerChoice === "paper") ||
+        (humanChoice === "paper" && computerChoice === "rock")
+    ) {
+        console.log("You win this round!");
+        humanScore++;
+    } else {
+        console.log("Computer wins this round!");
+        computerScore++;
+    }
+
+    console.log("Your Score:", humanScore, "Computer's Score:", computerScore);
+}
